@@ -3,25 +3,37 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>MoneyGoose リアルイベント日程 2026-2027</title>
+<title>MoneyGoose リアルイベント 2026-2027</title>
 <meta name="description" content="MoneyGoose リアルイベントの年間スケジュールです。" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet" />
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --bg: #fafaf7;
+    --bg: #f7f2e8;
     --card: #ffffff;
-    --text: #2c2c2c;
-    --text-mute: #777;
-    --accent: #c2956b;
-    --line: #e8e4dc;
+    --text: #2c2823;
+    --text-mute: #857c6f;
+    --accent: #b87a3d;
+    --accent-soft: #f5e6d0;
+    --line: #e6dfd0;
+
+    --type-seminar: #5b7a99;
+    --type-seminar-bg: #e6edf4;
+    --type-offkai: #7a9b6f;
+    --type-offkai-bg: #e8f0e4;
+    --type-camp: #a8703e;
+    --type-camp-bg: #f4e8d8;
+    --type-overseas: #b85c5c;
+    --type-overseas-bg: #f4e2e2;
+    --type-celebrate: #c19536;
+    --type-celebrate-bg: #f7ecd1;
   }
 
   body {
-    font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: "Zen Kaku Gothic New", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--bg);
     color: var(--text);
     line-height: 1.7;
@@ -29,140 +41,287 @@
   }
 
   .container {
-    max-width: 720px;
+    max-width: 760px;
     margin: 0 auto;
-    padding: 60px 24px 80px;
+    padding: 56px 24px 80px;
   }
 
+  /* ===== HEADER ===== */
   header {
+    background: linear-gradient(135deg, #fff8eb 0%, #f5e6d0 100%);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 40px 32px;
+    margin-bottom: 32px;
     text-align: center;
-    margin-bottom: 48px;
-    padding-bottom: 32px;
-    border-bottom: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: "";
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 140px; height: 140px;
+    background: radial-gradient(circle, rgba(184, 122, 61, 0.12), transparent 70%);
+    border-radius: 50%;
+  }
+
+  .badge-top {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    padding: 4px 14px;
+    border-radius: 999px;
+    margin-bottom: 16px;
   }
 
   h1 {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 8px;
+    font-size: 26px;
+    font-weight: 900;
+    margin-bottom: 10px;
     letter-spacing: 0.02em;
+    line-height: 1.5;
   }
 
   .subtitle {
     font-size: 14px;
     color: var(--text-mute);
+    margin-bottom: 28px;
   }
 
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    border-top: 1px solid rgba(184, 122, 61, 0.2);
+    padding-top: 20px;
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-num {
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    color: var(--text-mute);
+    margin-top: 4px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ===== INTRO ===== */
   .intro {
     background: var(--card);
     border: 1px solid var(--line);
-    border-radius: 8px;
-    padding: 20px 24px;
-    margin-bottom: 32px;
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 24px;
     font-size: 14px;
-    color: var(--text-mute);
+    color: var(--text);
     line-height: 1.9;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
   }
 
+  .intro-icon {
+    flex-shrink: 0;
+    width: 28px; height: 28px;
+    background: var(--accent-soft);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .intro-text {
+    flex: 1;
+  }
+
+  /* ===== EVENTS ===== */
   .events {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
   }
 
   .event {
     background: var(--card);
     border: 1px solid var(--line);
-    border-radius: 8px;
-    padding: 20px 24px;
+    border-radius: 12px;
+    padding: 22px 24px;
     display: grid;
-    grid-template-columns: 110px 1fr auto;
-    gap: 20px;
+    grid-template-columns: 100px 1fr auto;
+    gap: 22px;
     align-items: start;
-    transition: border-color 0.2s ease;
+    transition: all 0.25s ease;
+    position: relative;
   }
 
   .event:hover {
     border-color: var(--accent);
+    box-shadow: 0 4px 16px rgba(184, 122, 61, 0.08);
+    transform: translateY(-1px);
   }
 
   .event.past {
-    opacity: 0.5;
+    opacity: 0.45;
   }
 
-  .event-date {
-    font-size: 15px;
-    font-weight: 700;
+  .event-date-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .event-month {
+    font-size: 11px;
+    color: var(--text-mute);
+    letter-spacing: 0.1em;
+    font-weight: 500;
+  }
+
+  .event-day-num {
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1.1;
     color: var(--text);
+    margin-top: 2px;
   }
 
-  .event-day {
+  .event-day-num small {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .event-weekday {
     font-size: 12px;
     color: var(--text-mute);
     margin-top: 2px;
-    font-weight: 400;
   }
 
   .event-body {
     min-width: 0;
   }
 
+  .event-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+  }
+
+  .tag-seminar { background: var(--type-seminar-bg); color: var(--type-seminar); }
+  .tag-offkai { background: var(--type-offkai-bg); color: var(--type-offkai); }
+  .tag-camp { background: var(--type-camp-bg); color: var(--type-camp); }
+  .tag-overseas { background: var(--type-overseas-bg); color: var(--type-overseas); }
+  .tag-celebrate { background: var(--type-celebrate-bg); color: var(--type-celebrate); }
+
   .event-title {
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 17px;
+    font-weight: 700;
     margin-bottom: 4px;
+    line-height: 1.4;
   }
 
   .event-location {
     font-size: 13px;
     color: var(--text-mute);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .event-location::before {
+    content: "📍";
+    font-size: 12px;
   }
 
   .event-details {
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px dashed var(--line);
+    margin-top: 14px;
+    padding: 12px 14px;
+    background: #faf6ee;
+    border-radius: 8px;
     font-size: 13px;
-    color: var(--text-mute);
-    line-height: 1.8;
+    color: var(--text);
+    line-height: 1.9;
   }
 
   .event-details .venue {
-    color: var(--text);
-    font-weight: 500;
-    margin-bottom: 4px;
+    font-weight: 700;
+    margin-bottom: 2px;
   }
 
   .event-details .address {
     font-size: 12px;
+    color: var(--text-mute);
+    margin-bottom: 8px;
   }
 
   .event-details .schedule {
-    margin-top: 6px;
+    border-top: 1px dashed var(--line);
+    padding-top: 8px;
   }
 
-  .event-details .schedule span {
-    color: var(--text);
-    font-weight: 500;
+  .event-details .schedule-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    font-size: 13px;
+  }
+
+  .event-details .schedule-time {
+    font-weight: 700;
+    color: var(--accent);
+    min-width: 60px;
+  }
+
+  .event-details .schedule-fee {
+    font-size: 12px;
+    color: var(--text-mute);
+    margin-left: 6px;
   }
 
   .event-countdown {
+    text-align: right;
     font-size: 12px;
     color: var(--accent);
-    text-align: right;
     white-space: nowrap;
-    font-weight: 500;
+    font-weight: 700;
+    background: var(--accent-soft);
+    padding: 6px 12px;
+    border-radius: 999px;
   }
 
   .event-countdown.today {
-    color: #d9534f;
-    font-weight: 700;
+    background: #fde2e2;
+    color: #c44;
   }
 
   .event-countdown.past {
+    background: #eee;
     color: var(--text-mute);
+    font-weight: 500;
   }
 
+  /* ===== FOOTER ===== */
   footer {
     text-align: center;
     margin-top: 48px;
@@ -172,19 +331,35 @@
     color: var(--text-mute);
   }
 
+  .footer-logo {
+    font-weight: 900;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+  }
+
+  /* ===== RESPONSIVE ===== */
   @media (max-width: 600px) {
-    .container { padding: 40px 16px 60px; }
+    .container { padding: 32px 14px 60px; }
+    header { padding: 32px 22px; }
+    h1 { font-size: 21px; }
+    .stats { gap: 20px; }
+    .stat-num { font-size: 20px; }
+
     .event {
-      grid-template-columns: 90px 1fr;
+      grid-template-columns: 80px 1fr;
       grid-template-rows: auto auto;
-      gap: 6px 16px;
-      padding: 16px 18px;
+      gap: 8px 16px;
+      padding: 18px 18px;
     }
     .event-countdown {
       grid-column: 2;
-      text-align: left;
+      justify-self: start;
+      margin-top: -4px;
+      font-size: 11px;
+      padding: 4px 10px;
     }
-    .event-date { font-size: 14px; }
+    .event-day-num { font-size: 24px; }
     .event-title { font-size: 15px; }
   }
 </style>
@@ -194,126 +369,177 @@
 <div class="container">
 
   <header>
-    <h1>MoneyGoose リアルイベント 日程</h1>
-    <div class="subtitle">2026年5月 〜 2027年1月</div>
+    <div class="badge-top">2026 — 2027</div>
+    <h1>MoneyGoose<br />リアルイベント スケジュール</h1>
+    <div class="subtitle">2026年5月 〜 2027年1月｜全国 + 海外</div>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num">9</div>
+        <div class="stat-label">EVENTS</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">6</div>
+        <div class="stat-label">CITIES + 台湾</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">9ヶ月</div>
+        <div class="stat-label">PERIOD</div>
+      </div>
+    </div>
   </header>
 
   <div class="intro">
-    1年間のリアルイベントの予定です。<br />
-    詳細（会場・参加費・申込方法など）は各イベントごとに別途ご案内します。
+    <div class="intro-icon">i</div>
+    <div class="intro-text">
+      1年間のリアルイベント予定です。会場・参加費・申込方法など詳細は、各イベントごとに順次ご案内します。
+    </div>
   </div>
 
   <div class="events">
 
+    <!-- 1: 5/17 東京 -->
     <div class="event" data-date="2026-05-17">
-      <div>
-        <div class="event-date">5月17日</div>
-        <div class="event-day">日曜日</div>
+      <div class="event-date-col">
+        <div class="event-month">MAY 2026</div>
+        <div class="event-day-num">17</div>
+        <div class="event-weekday">日曜日</div>
       </div>
       <div class="event-body">
+        <span class="event-tag tag-seminar">セミナー＋懇親会</span>
         <div class="event-title">東京セミナー＋懇親会</div>
-        <div class="event-location">東京</div>
+        <div class="event-location">東京・恵比寿</div>
         <div class="event-details">
           <div class="venue">HEARTH【ハース】恵比寿</div>
           <div class="address">東京都渋谷区恵比寿西1-15-8 Sun Ebisu B1・1F</div>
           <div class="schedule">
-            <span>15:00〜</span> セミナー　／　<span>18:00〜</span> 懇親会（会費 6,000円予定）
+            <div class="schedule-row">
+              <span class="schedule-time">15:00〜</span>
+              <span>セミナー</span>
+            </div>
+            <div class="schedule-row">
+              <span class="schedule-time">18:00〜</span>
+              <span>懇親会<span class="schedule-fee">（会費 6,000円予定）</span></span>
+            </div>
           </div>
         </div>
       </div>
       <div class="event-countdown"></div>
     </div>
 
+    <!-- 2: 6/27 群馬 -->
     <div class="event" data-date="2026-06-27">
-      <div>
-        <div class="event-date">6月27日</div>
-        <div class="event-day">土曜日</div>
+      <div class="event-date-col">
+        <div class="event-month">JUN 2026</div>
+        <div class="event-day-num">27</div>
+        <div class="event-weekday">土曜日</div>
       </div>
       <div class="event-body">
+        <span class="event-tag tag-offkai">オフ会</span>
         <div class="event-title">群馬オフ会</div>
         <div class="event-location">群馬</div>
       </div>
       <div class="event-countdown"></div>
     </div>
 
+    <!-- 3: 7/26 名古屋 -->
     <div class="event" data-date="2026-07-26">
-      <div>
-        <div class="event-date">7月26日</div>
-        <div class="event-day">日曜日</div>
+      <div class="event-date-col">
+        <div class="event-month">JUL 2026</div>
+        <div class="event-day-num">26</div>
+        <div class="event-weekday">日曜日</div>
       </div>
       <div class="event-body">
+        <span class="event-tag tag-seminar">セミナー＋懇親会</span>
         <div class="event-title">名古屋セミナー＋懇親会</div>
         <div class="event-location">名古屋</div>
       </div>
       <div class="event-countdown"></div>
     </div>
 
+    <!-- 4: 8/22 福岡 -->
     <div class="event" data-date="2026-08-22">
-      <div>
-        <div class="event-date">8月22日</div>
-        <div class="event-day">土曜日</div>
+      <div class="event-date-col">
+        <div class="event-month">AUG 2026</div>
+        <div class="event-day-num">22</div>
+        <div class="event-weekday">土曜日</div>
       </div>
       <div class="event-body">
+        <span class="event-tag tag-camp">合宿</span>
         <div class="event-title">福岡合宿</div>
         <div class="event-location">福岡</div>
       </div>
       <div class="event-countdown"></div>
     </div>
 
+    <!-- 5: 9/26-27 沖縄 -->
     <div class="event" data-date="2026-09-26">
-      <div>
-        <div class="event-date">9月26-27日</div>
-        <div class="event-day">土・日曜日</div>
+      <div class="event-date-col">
+        <div class="event-month">SEP 2026</div>
+        <div class="event-day-num">26<small>-27</small></div>
+        <div class="event-weekday">土・日</div>
       </div>
       <div class="event-body">
+        <span class="event-tag tag-camp">合宿＋オフ会</span>
         <div class="event-title">沖縄合宿＋オフ会</div>
         <div class="event-location">沖縄</div>
       </div>
       <div class="event-countdown"></div>
     </div>
 
+    <!-- 6: 10/25 東京 -->
     <div class="event" data-date="2026-10-25">
-      <div>
-        <div class="event-date">10月25日</div>
-        <div class="event-day">日曜日</div>
+      <div class="event-date-col">
+        <div class="event-month">OCT 2026</div>
+        <div class="event-day-num">25</div>
+        <div class="event-weekday">日曜日</div>
       </div>
       <div class="event-body">
+        <span class="event-tag tag-seminar">セミナー＋懇親会</span>
         <div class="event-title">東京セミナー＋懇親会</div>
         <div class="event-location">東京</div>
       </div>
       <div class="event-countdown"></div>
     </div>
 
+    <!-- 7: 11/20-23 台湾 -->
     <div class="event" data-date="2026-11-20">
-      <div>
-        <div class="event-date">11月20-23日</div>
-        <div class="event-day">金〜月曜日</div>
+      <div class="event-date-col">
+        <div class="event-month">NOV 2026</div>
+        <div class="event-day-num">20<small>-23</small></div>
+        <div class="event-weekday">金〜月</div>
       </div>
       <div class="event-body">
+        <span class="event-tag tag-overseas">海外オフ会</span>
         <div class="event-title">台湾 海外オフ会</div>
         <div class="event-location">台湾</div>
       </div>
       <div class="event-countdown"></div>
     </div>
 
+    <!-- 8: 12/12 大阪 -->
     <div class="event" data-date="2026-12-12">
-      <div>
-        <div class="event-date">12月12日</div>
-        <div class="event-day">土曜日</div>
+      <div class="event-date-col">
+        <div class="event-month">DEC 2026</div>
+        <div class="event-day-num">12</div>
+        <div class="event-weekday">土曜日</div>
       </div>
       <div class="event-body">
+        <span class="event-tag tag-celebrate">セミナー＋忘年会</span>
         <div class="event-title">大阪セミナー＋忘年会</div>
         <div class="event-location">大阪</div>
       </div>
       <div class="event-countdown"></div>
     </div>
 
+    <!-- 9: 1/24 名古屋 -->
     <div class="event" data-date="2027-01-24">
-      <div>
-        <div class="event-date">1月24日</div>
-        <div class="event-day">日曜日</div>
+      <div class="event-date-col">
+        <div class="event-month">JAN 2027</div>
+        <div class="event-day-num">24</div>
+        <div class="event-weekday">日曜日</div>
       </div>
       <div class="event-body">
+        <span class="event-tag tag-celebrate">セミナー＋新年会</span>
         <div class="event-title">名古屋セミナー＋新年会</div>
         <div class="event-location">名古屋</div>
       </div>
@@ -323,7 +549,8 @@
   </div>
 
   <footer>
-    MoneyGoose
+    <div class="footer-logo">MoneyGoose</div>
+    <div>リアルイベント 2026 - 2027</div>
   </footer>
 
 </div>
