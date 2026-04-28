@@ -395,6 +395,20 @@
     opacity: 0.4;
   }
 
+  .event-image {
+    margin: -32px -28px 18px;
+    overflow: hidden;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    background: #000;
+  }
+
+  .event-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
   .event-details .sub-event {
     margin-top: 12px;
     padding-top: 12px;
@@ -659,17 +673,22 @@
           <div class="sub-event">
             <span class="sub-label">恒例 · 前日ツアー</span>
             <div class="venue">7.25（土）伊勢・松阪ツアー</div>
+            <div class="address">遠方からでもOK · 昼14時頃に三重着で間に合うスケジュール</div>
             <div class="schedule-row">
-              <span class="schedule-time">午前</span>
-              <span>伊勢神宮 参拝</span>
+              <span class="schedule-time">昼</span>
+              <span>三重に集合</span>
             </div>
             <div class="schedule-row">
-              <span class="schedule-time">昼〜</span>
-              <span>松阪へ移動・松阪牛焼肉</span>
+              <span class="schedule-time">午後</span>
+              <span>伊勢神宮 参拝（1〜2時間）</span>
+            </div>
+            <div class="schedule-row">
+              <span class="schedule-time">夕方</span>
+              <span>松阪へ到着</span>
             </div>
             <div class="schedule-row">
               <span class="schedule-time">夜</span>
-              <span>松阪の繁華街を「大ボス」がアテンド</span>
+              <span>松阪牛の焼肉 → 繁華街を「大ボス」がアテンド</span>
             </div>
           </div>
         </div>
@@ -687,6 +706,9 @@
       <div class="event-spacer"></div>
       <div class="event-marker">04</div>
       <div class="event-card" data-date="2026-08-22">
+        <div class="event-image">
+          <img src="assets/fukuoka-camp.jpg" alt="福岡合宿 AirportHills" loading="lazy" />
+        </div>
         <div class="event-meta">
           <span class="event-date">8.22</span>
           <span class="event-day">Sat · 2026</span>
