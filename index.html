@@ -395,6 +395,71 @@
     opacity: 0.4;
   }
 
+  .event-details .sub-event {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--line);
+  }
+
+  .event-details .sub-label {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--gold-bright);
+    background: rgba(212, 168, 87, 0.15);
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-bottom: 6px;
+  }
+
+  .event-details .note {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--line);
+    color: var(--text);
+    font-size: 13px;
+  }
+
+  .event-details .note ol {
+    list-style: none;
+    counter-reset: step;
+    padding-left: 0;
+    margin-top: 6px;
+  }
+
+  .event-details .note li {
+    counter-increment: step;
+    padding-left: 28px;
+    position: relative;
+    margin-bottom: 4px;
+    line-height: 1.8;
+  }
+
+  .event-details .note li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--bg-deep);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .event-details .note-title {
+    color: var(--gold-bright);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+  }
+
   /* ===== FOOTER ===== */
   footer {
     padding: 48px 24px 40px;
@@ -546,7 +611,29 @@
           <span class="event-tag">オフ会</span>
         </div>
         <div class="event-name">群馬オフ会</div>
-        <div class="event-location">GUNMA</div>
+        <div class="event-location">GUNMA · 高崎</div>
+        <div class="event-details">
+          <div class="venue">高崎駅周辺</div>
+          <div class="address">新幹線停車駅 · 関東／新潟／北陸からアクセス◎</div>
+          <div class="schedule-row">
+            <span class="schedule-time">6.27</span>
+            <span>メインオフ会（みんなで集まる日）</span>
+          </div>
+          <div class="sub-event">
+            <span class="sub-label">OPTION · 希望者のみ</span>
+            <div class="schedule-row">
+              <span class="schedule-time">6.26 or 28</span>
+              <span>群馬ツアー @ 桐生市<span class="schedule-fee">（中村の地元・少し濃い内容）</span></span>
+            </div>
+          </div>
+          <div class="note">
+            <div class="note-title">募集の進め方</div>
+            <ol>
+              <li>まずは 6/27 のメインに参加できる方を募集</li>
+              <li>多くの日程に参加できる方を優先して、ツアーの詳細を決定</li>
+            </ol>
+          </div>
+        </div>
         <div class="event-countdown">
           <span class="countdown-num">—</span>
           <span class="countdown-label">DAYS TO GO</span>
