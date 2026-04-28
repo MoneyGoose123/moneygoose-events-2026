@@ -3,976 +3,316 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>MoneyGoose リアルイベント 2026-2027 | 一年で巡る、9つの邂逅</title>
-<meta name="description" content="MoneyGoose公式リアルイベントスケジュール。東京・群馬・名古屋・福岡・沖縄・台湾・大阪。セミナー、合宿、海外ツアーまで。リアルでしか得られない出会いと学びの一年。" />
-<meta property="og:title" content="MoneyGoose リアルイベント 2026-2027" />
-<meta property="og:description" content="一年で9つの街を巡る、仲間と未来をつくるリアルイベント。" />
-<meta property="og:type" content="website" />
+<title>MoneyGoose リアルイベント日程 2026-2027</title>
+<meta name="description" content="MoneyGoose リアルイベントの年間スケジュールです。" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;900&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --bg-deep: #0a0a0c;
-    --bg-card: #14141a;
-    --bg-elevated: #1c1c25;
-    --gold: #d4a857;
-    --gold-bright: #f5d186;
-    --gold-deep: #8a6c2e;
-    --ivory: #f4ede0;
-    --text: #e8e2d4;
-    --text-mute: #9a948a;
-    --line: rgba(212, 168, 87, 0.18);
+    --bg: #fafaf7;
+    --card: #ffffff;
+    --text: #2c2c2c;
+    --text-mute: #777;
+    --accent: #c2956b;
+    --line: #e8e4dc;
   }
-
-  html { scroll-behavior: smooth; }
 
   body {
     font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
-    background: var(--bg-deep);
+    background: var(--bg);
     color: var(--text);
-    line-height: 1.8;
-    overflow-x: hidden;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ===== HERO ===== */
-  .hero {
-    min-height: 100vh;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    overflow: hidden;
-    padding: 60px 24px;
-    background:
-      radial-gradient(ellipse at 20% 10%, rgba(212, 168, 87, 0.18), transparent 50%),
-      radial-gradient(ellipse at 80% 90%, rgba(212, 168, 87, 0.12), transparent 50%),
-      linear-gradient(180deg, #0a0a0c 0%, #14141a 100%);
-  }
-
-  .hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(212, 168, 87, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(212, 168, 87, 0.04) 1px, transparent 1px);
-    background-size: 80px 80px;
-    mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero-inner {
-    position: relative;
-    max-width: 1100px;
-    z-index: 2;
-    animation: fadeUp 1.2s ease-out;
-  }
-
-  .hero-badge {
-    display: inline-block;
-    padding: 8px 24px;
-    border: 1px solid var(--gold);
-    color: var(--gold-bright);
-    font-size: 12px;
-    letter-spacing: 0.4em;
-    margin-bottom: 40px;
-    border-radius: 999px;
-    text-transform: uppercase;
-  }
-
-  .hero-title {
-    font-family: "Noto Serif JP", serif;
-    font-weight: 900;
-    font-size: clamp(36px, 6vw, 72px);
-    line-height: 1.3;
-    letter-spacing: 0.04em;
-    margin-bottom: 32px;
-    color: var(--ivory);
-  }
-
-  .hero-title .accent {
-    background: linear-gradient(135deg, var(--gold-bright), var(--gold), var(--gold-deep));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .hero-sub {
-    font-family: "Cormorant Garamond", serif;
-    font-style: italic;
-    font-size: clamp(18px, 2.4vw, 28px);
-    color: var(--gold-bright);
-    margin-bottom: 24px;
-    letter-spacing: 0.05em;
-  }
-
-  .hero-lead {
-    font-size: clamp(15px, 1.6vw, 18px);
-    color: var(--text);
+  .container {
     max-width: 720px;
-    margin: 0 auto 48px;
-    line-height: 2.1;
-  }
-
-  .hero-stats {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 48px;
-    margin-top: 40px;
-  }
-
-  .stat {
-    text-align: center;
-  }
-
-  .stat-num {
-    font-family: "Cormorant Garamond", serif;
-    font-size: clamp(48px, 6vw, 72px);
-    font-weight: 600;
-    color: var(--gold-bright);
-    line-height: 1;
-    display: block;
-  }
-
-  .stat-label {
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    color: var(--text-mute);
-    text-transform: uppercase;
-    margin-top: 8px;
-  }
-
-  .scroll-hint {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--gold);
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    animation: bounce 2s ease-in-out infinite;
-  }
-
-  .scroll-hint::after {
-    content: "";
-    display: block;
-    width: 1px;
-    height: 40px;
-    background: linear-gradient(180deg, var(--gold), transparent);
-    margin: 12px auto 0;
-  }
-
-  /* ===== INTRO ===== */
-  .intro {
-    padding: 120px 24px;
-    background: linear-gradient(180deg, #14141a 0%, #0a0a0c 100%);
-    text-align: center;
-  }
-
-  .intro-inner {
-    max-width: 800px;
     margin: 0 auto;
+    padding: 60px 24px 80px;
   }
 
-  .section-label {
-    font-family: "Cormorant Garamond", serif;
-    font-style: italic;
-    color: var(--gold);
-    font-size: 18px;
-    letter-spacing: 0.2em;
-    margin-bottom: 16px;
-  }
-
-  .section-title {
-    font-family: "Noto Serif JP", serif;
-    font-weight: 900;
-    font-size: clamp(28px, 4vw, 44px);
-    margin-bottom: 32px;
-    color: var(--ivory);
-    line-height: 1.5;
-  }
-
-  .intro p {
-    font-size: 16px;
-    line-height: 2.2;
-    margin-bottom: 24px;
-    color: var(--text);
-  }
-
-  .quote {
-    font-family: "Noto Serif JP", serif;
-    font-size: clamp(20px, 2.4vw, 28px);
-    color: var(--gold-bright);
-    font-weight: 600;
-    margin: 60px 0;
-    padding: 40px 0;
-    border-top: 1px solid var(--line);
+  header {
+    text-align: center;
+    margin-bottom: 48px;
+    padding-bottom: 32px;
     border-bottom: 1px solid var(--line);
-    line-height: 1.8;
-    letter-spacing: 0.05em;
   }
 
-  /* ===== TIMELINE ===== */
-  .timeline-section {
-    padding: 120px 24px;
-    background: var(--bg-deep);
-    position: relative;
-  }
-
-  .timeline-section::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  }
-
-  .timeline-header {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 80px;
-  }
-
-  .timeline {
-    max-width: 1100px;
-    margin: 0 auto;
-    position: relative;
-  }
-
-  .timeline::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background: linear-gradient(180deg, transparent, var(--gold-deep) 5%, var(--gold-deep) 95%, transparent);
-    transform: translateX(-50%);
-  }
-
-  .event-row {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    gap: 40px;
-    align-items: center;
-    margin-bottom: 80px;
-    position: relative;
-  }
-
-  .event-row:nth-child(even) .event-card {
-    grid-column: 3;
-  }
-
-  .event-row:nth-child(even) .event-spacer {
-    grid-column: 1;
-  }
-
-  .event-row:nth-child(odd) .event-card {
-    grid-column: 1;
-  }
-
-  .event-row:nth-child(odd) .event-spacer {
-    grid-column: 3;
-  }
-
-  .event-marker {
-    grid-column: 2;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: var(--bg-deep);
-    border: 2px solid var(--gold);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Cormorant Garamond", serif;
-    color: var(--gold-bright);
-    font-weight: 600;
-    font-size: 20px;
-    z-index: 2;
-    position: relative;
-    box-shadow: 0 0 30px rgba(212, 168, 87, 0.3);
-  }
-
-  .event-card {
-    background: linear-gradient(160deg, var(--bg-card), var(--bg-elevated));
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 36px 32px;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .event-card::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, var(--gold-deep), var(--gold), var(--gold-deep));
-    opacity: 0.6;
-  }
-
-  .event-card:hover {
-    transform: translateY(-6px);
-    border-color: var(--gold);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(212, 168, 87, 0.1);
-  }
-
-  .event-meta {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 16px;
-    flex-wrap: wrap;
-  }
-
-  .event-date {
-    font-family: "Cormorant Garamond", serif;
-    color: var(--gold-bright);
-    font-size: 26px;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-  }
-
-  .event-day {
-    color: var(--text-mute);
-    font-size: 14px;
-  }
-
-  .event-tag {
-    display: inline-block;
-    padding: 4px 12px;
-    background: rgba(212, 168, 87, 0.12);
-    color: var(--gold-bright);
-    border-radius: 4px;
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    border: 1px solid rgba(212, 168, 87, 0.3);
-  }
-
-  .event-tag.special {
-    background: linear-gradient(135deg, rgba(212, 168, 87, 0.3), rgba(212, 168, 87, 0.1));
-    color: var(--ivory);
-    border-color: var(--gold);
-  }
-
-  .event-name {
-    font-family: "Noto Serif JP", serif;
+  h1 {
     font-size: 22px;
     font-weight: 700;
     margin-bottom: 8px;
-    color: var(--ivory);
-    line-height: 1.5;
+    letter-spacing: 0.02em;
   }
 
-  .event-location {
-    color: var(--gold);
+  .subtitle {
     font-size: 14px;
-    letter-spacing: 0.1em;
-    margin-bottom: 16px;
+    color: var(--text-mute);
   }
 
-  .event-location::before {
-    content: "◆ ";
-    color: var(--gold-deep);
-  }
-
-  .event-desc {
+  .intro {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 32px;
     font-size: 14px;
     color: var(--text-mute);
     line-height: 1.9;
   }
 
-  .event-countdown {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
+  .events {
     display: flex;
-    align-items: baseline;
-    gap: 8px;
+    flex-direction: column;
+    gap: 12px;
   }
 
-  .countdown-num {
-    font-family: "Cormorant Garamond", serif;
-    color: var(--gold-bright);
-    font-size: 28px;
-    font-weight: 600;
-  }
-
-  .countdown-label {
-    font-size: 11px;
-    color: var(--text-mute);
-    letter-spacing: 0.2em;
-  }
-
-  /* ===== WHY JOIN ===== */
-  .why-section {
-    padding: 120px 24px;
-    background: linear-gradient(180deg, #0a0a0c, #14141a);
-  }
-
-  .why-grid {
-    max-width: 1100px;
-    margin: 60px auto 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 32px;
-  }
-
-  .why-card {
-    padding: 40px 32px;
+  .event {
+    background: var(--card);
     border: 1px solid var(--line);
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.02);
-    transition: all 0.4s ease;
+    padding: 20px 24px;
+    display: grid;
+    grid-template-columns: 110px 1fr auto;
+    gap: 20px;
+    align-items: center;
+    transition: border-color 0.2s ease;
   }
 
-  .why-card:hover {
-    border-color: var(--gold);
-    background: rgba(212, 168, 87, 0.04);
-    transform: translateY(-4px);
+  .event:hover {
+    border-color: var(--accent);
   }
 
-  .why-icon {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 56px;
-    color: var(--gold);
-    line-height: 1;
-    margin-bottom: 20px;
-    font-weight: 600;
+  .event.past {
+    opacity: 0.5;
   }
 
-  .why-title {
-    font-family: "Noto Serif JP", serif;
-    font-size: 20px;
+  .event-date {
+    font-size: 15px;
     font-weight: 700;
-    color: var(--ivory);
-    margin-bottom: 16px;
-  }
-
-  .why-text {
-    font-size: 14px;
-    color: var(--text-mute);
-    line-height: 2;
-  }
-
-  /* ===== CTA ===== */
-  .cta {
-    padding: 120px 24px;
-    text-align: center;
-    background:
-      radial-gradient(ellipse at center, rgba(212, 168, 87, 0.12), transparent 60%),
-      var(--bg-deep);
-    border-top: 1px solid var(--line);
-  }
-
-  .cta-inner {
-    max-width: 720px;
-    margin: 0 auto;
-  }
-
-  .cta-title {
-    font-family: "Noto Serif JP", serif;
-    font-size: clamp(28px, 4vw, 42px);
-    font-weight: 900;
-    color: var(--ivory);
-    margin-bottom: 24px;
-    line-height: 1.5;
-  }
-
-  .cta-text {
-    font-size: 16px;
     color: var(--text);
-    line-height: 2.1;
-    margin-bottom: 48px;
   }
 
-  .cta-button {
-    display: inline-block;
-    padding: 22px 64px;
-    background: linear-gradient(135deg, var(--gold), var(--gold-bright));
-    color: #0a0a0c;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 16px;
-    letter-spacing: 0.2em;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 40px rgba(212, 168, 87, 0.3);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 50px rgba(212, 168, 87, 0.5);
-  }
-
-  .cta-note {
-    margin-top: 24px;
-    font-size: 13px;
-    color: var(--text-mute);
-    letter-spacing: 0.1em;
-  }
-
-  /* ===== FOOTER ===== */
-  footer {
-    padding: 60px 24px 40px;
-    text-align: center;
-    border-top: 1px solid var(--line);
-    background: var(--bg-deep);
-  }
-
-  .footer-logo {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 24px;
-    font-weight: 600;
-    letter-spacing: 0.3em;
-    color: var(--gold-bright);
-    margin-bottom: 16px;
-  }
-
-  .footer-text {
+  .event-day {
     font-size: 12px;
     color: var(--text-mute);
-    letter-spacing: 0.1em;
+    margin-top: 2px;
+    font-weight: 400;
   }
 
-  /* ===== ANIMATIONS ===== */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
+  .event-body {
+    min-width: 0;
   }
 
-  @keyframes bounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(8px); }
+  .event-title {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 4px;
   }
 
-  .reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+  .event-location {
+    font-size: 13px;
+    color: var(--text-mute);
   }
 
-  .reveal.in-view {
-    opacity: 1;
-    transform: translateY(0);
+  .event-countdown {
+    font-size: 12px;
+    color: var(--accent);
+    text-align: right;
+    white-space: nowrap;
+    font-weight: 500;
   }
 
-  /* ===== RESPONSIVE ===== */
-  @media (max-width: 768px) {
-    .timeline::before {
-      left: 28px;
+  .event-countdown.today {
+    color: #d9534f;
+    font-weight: 700;
+  }
+
+  .event-countdown.past {
+    color: var(--text-mute);
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-size: 12px;
+    color: var(--text-mute);
+  }
+
+  @media (max-width: 600px) {
+    .container { padding: 40px 16px 60px; }
+    .event {
+      grid-template-columns: 90px 1fr;
+      grid-template-rows: auto auto;
+      gap: 6px 16px;
+      padding: 16px 18px;
     }
-    .event-row {
-      grid-template-columns: 56px 1fr;
-      gap: 20px;
-      margin-bottom: 48px;
-    }
-    .event-marker {
-      grid-column: 1;
-    }
-    .event-row:nth-child(even) .event-card,
-    .event-row:nth-child(odd) .event-card {
+    .event-countdown {
       grid-column: 2;
+      text-align: left;
     }
-    .event-spacer {
-      display: none;
-    }
-    .event-card {
-      padding: 28px 24px;
-    }
-    .hero-stats {
-      gap: 32px;
-    }
-    .why-grid {
-      grid-template-columns: 1fr;
-    }
-    .quote {
-      font-size: 18px;
-      margin: 40px 0;
-      padding: 32px 0;
-    }
+    .event-date { font-size: 14px; }
+    .event-title { font-size: 15px; }
   }
 </style>
 </head>
 <body>
 
-<!-- ===== HERO ===== -->
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-badge">MoneyGoose Real Events 2026 — 2027</div>
-    <h1 class="hero-title">
-      一年で巡る、<br />
-      <span class="accent">9つの邂逅。</span>
-    </h1>
-    <p class="hero-sub">— Beyond the Screen, Together —</p>
-    <p class="hero-lead">
-      画面越しに語り合った仲間と、リアルで会う一年。<br />
-      東京から沖縄、海を越えて台湾まで。<br />
-      本気で稼ぐ人だけが集まる場所で、<br />
-      あなたの人生が動き出す。
-    </p>
-    <div class="hero-stats">
-      <div class="stat">
-        <span class="stat-num">9</span>
-        <span class="stat-label">Events</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">8</span>
-        <span class="stat-label">Cities</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">365</span>
-        <span class="stat-label">Days of Bond</span>
-      </div>
-    </div>
-  </div>
-  <div class="scroll-hint">SCROLL</div>
-</section>
+<div class="container">
 
-<!-- ===== INTRO ===== -->
-<section class="intro">
-  <div class="intro-inner">
-    <div class="section-label reveal">— Prologue —</div>
-    <h2 class="section-title reveal">
-      オンラインの先に、<br />本物の仲間がいる。
-    </h2>
-    <p class="reveal">
-      MoneyGooseは、ただの学びの場じゃない。<br />
-      ここに集まるのは、本気で人生を変えたい人ばかりだ。
-    </p>
-    <p class="reveal">
-      画面の中で交わした言葉が、リアルで握手に変わる瞬間。<br />
-      その一回で、半年分のオンライン学習を超える熱量が手に入る。
-    </p>
-    <div class="quote reveal">
-      「成功するヤツは、人と会いに行く。<br />
-      会いに行ける場所を、僕らが用意した。」
-    </div>
-    <p class="reveal">
-      この一年、9つの街で会いましょう。<br />
-      きっと、あなたの隣に座った誰かが、<br />
-      未来を共につくる仲間になる。
-    </p>
-  </div>
-</section>
+  <header>
+    <h1>MoneyGoose リアルイベント 日程</h1>
+    <div class="subtitle">2026年5月 〜 2027年1月</div>
+  </header>
 
-<!-- ===== TIMELINE ===== -->
-<section class="timeline-section">
-  <div class="timeline-header">
-    <div class="section-label reveal">— Schedule —</div>
-    <h2 class="section-title reveal">9つの街で、待っている。</h2>
-    <p class="reveal" style="color: var(--text-mute); font-size: 15px; line-height: 2;">
-      2026年5月〜2027年1月｜全9イベント
-    </p>
+  <div class="intro">
+    1年間のリアルイベントの予定です。<br />
+    詳細（会場・参加費・申込方法など）は各イベントごとに別途ご案内します。
   </div>
 
-  <div class="timeline">
+  <div class="events">
 
-    <!-- Event 1 -->
-    <div class="event-row reveal">
-      <div class="event-card">
-        <div class="event-meta">
-          <span class="event-date">5.17</span>
-          <span class="event-day">Sun · 2026</span>
-          <span class="event-tag">SEMINAR + 懇親会</span>
-        </div>
-        <div class="event-name">東京セミナー＋懇親会</div>
-        <div class="event-location">TOKYO</div>
-        <div class="event-desc">
-          1年間の幕開け。MoneyGooseの方針、最新の戦略、これからの一年の地図を全員でシェアする日。セミナー後は懇親会で、画面越しの「あの人」とリアルで乾杯。
-        </div>
-        <div class="event-countdown" data-target="2026-05-17">
-          <span class="countdown-num">—</span>
-          <span class="countdown-label">DAYS TO GO</span>
-        </div>
+    <div class="event" data-date="2026-05-17">
+      <div>
+        <div class="event-date">5月17日</div>
+        <div class="event-day">日曜日</div>
       </div>
-      <div class="event-marker">01</div>
-      <div class="event-spacer"></div>
+      <div class="event-body">
+        <div class="event-title">東京セミナー＋懇親会</div>
+        <div class="event-location">東京</div>
+      </div>
+      <div class="event-countdown"></div>
     </div>
 
-    <!-- Event 2 -->
-    <div class="event-row reveal">
-      <div class="event-spacer"></div>
-      <div class="event-marker">02</div>
-      <div class="event-card">
-        <div class="event-meta">
-          <span class="event-date">6.27</span>
-          <span class="event-day">Sat · 2026</span>
-          <span class="event-tag">オフ会</span>
-        </div>
-        <div class="event-name">群馬オフ会</div>
-        <div class="event-location">GUNMA</div>
-        <div class="event-desc">
-          自然に囲まれた群馬で、肩の力を抜いて語り合う一日。仕事の話も、人生の話も、ここでは飾らずに。中村大祐の地元・群馬で、本音の交流を。
-        </div>
-        <div class="event-countdown" data-target="2026-06-27">
-          <span class="countdown-num">—</span>
-          <span class="countdown-label">DAYS TO GO</span>
-        </div>
+    <div class="event" data-date="2026-06-27">
+      <div>
+        <div class="event-date">6月27日</div>
+        <div class="event-day">土曜日</div>
       </div>
+      <div class="event-body">
+        <div class="event-title">群馬オフ会</div>
+        <div class="event-location">群馬</div>
+      </div>
+      <div class="event-countdown"></div>
     </div>
 
-    <!-- Event 3 -->
-    <div class="event-row reveal">
-      <div class="event-card">
-        <div class="event-meta">
-          <span class="event-date">7.26</span>
-          <span class="event-day">Sun · 2026</span>
-          <span class="event-tag">SEMINAR + 懇親会</span>
-        </div>
-        <div class="event-name">名古屋セミナー＋懇親会</div>
-        <div class="event-location">NAGOYA</div>
-        <div class="event-desc">
-          中部のメンバーが熱い名古屋へ。半期の振り返りと、後半戦の戦略をブラッシュアップ。名古屋メシを片手に、地域を超えた仲間と濃密な夜を。
-        </div>
-        <div class="event-countdown" data-target="2026-07-26">
-          <span class="countdown-num">—</span>
-          <span class="countdown-label">DAYS TO GO</span>
-        </div>
+    <div class="event" data-date="2026-07-26">
+      <div>
+        <div class="event-date">7月26日</div>
+        <div class="event-day">日曜日</div>
       </div>
-      <div class="event-marker">03</div>
-      <div class="event-spacer"></div>
+      <div class="event-body">
+        <div class="event-title">名古屋セミナー＋懇親会</div>
+        <div class="event-location">名古屋</div>
+      </div>
+      <div class="event-countdown"></div>
     </div>
 
-    <!-- Event 4 -->
-    <div class="event-row reveal">
-      <div class="event-spacer"></div>
-      <div class="event-marker">04</div>
-      <div class="event-card">
-        <div class="event-meta">
-          <span class="event-date">8.22</span>
-          <span class="event-day">Sat · 2026</span>
-          <span class="event-tag special">合宿</span>
-        </div>
-        <div class="event-name">福岡合宿</div>
-        <div class="event-location">FUKUOKA</div>
-        <div class="event-desc">
-          九州の熱気を浴びる、合宿スタイル。朝から晩まで仲間と過ごし、共に学び、共に食べ、共に夢を語る。福岡の屋台と海の幸が、あなたの記憶に焼きつく。
-        </div>
-        <div class="event-countdown" data-target="2026-08-22">
-          <span class="countdown-num">—</span>
-          <span class="countdown-label">DAYS TO GO</span>
-        </div>
+    <div class="event" data-date="2026-08-22">
+      <div>
+        <div class="event-date">8月22日</div>
+        <div class="event-day">土曜日</div>
       </div>
+      <div class="event-body">
+        <div class="event-title">福岡合宿</div>
+        <div class="event-location">福岡</div>
+      </div>
+      <div class="event-countdown"></div>
     </div>
 
-    <!-- Event 5 -->
-    <div class="event-row reveal">
-      <div class="event-card">
-        <div class="event-meta">
-          <span class="event-date">9.26 — 27</span>
-          <span class="event-day">Sat - Sun · 2026</span>
-          <span class="event-tag special">合宿 + オフ会 · 2 DAYS</span>
-        </div>
-        <div class="event-name">沖縄合宿＋オフ会</div>
-        <div class="event-location">OKINAWA</div>
-        <div class="event-desc">
-          青い海、白い砂浜、そして本気の仲間。2日間まるごと沖縄に浸る、特別な合宿。日中は学び、夜はビーチサイドで語り合う。一生もののストーリーが生まれる場所。
-        </div>
-        <div class="event-countdown" data-target="2026-09-26">
-          <span class="countdown-num">—</span>
-          <span class="countdown-label">DAYS TO GO</span>
-        </div>
+    <div class="event" data-date="2026-09-26">
+      <div>
+        <div class="event-date">9月26-27日</div>
+        <div class="event-day">土・日曜日</div>
       </div>
-      <div class="event-marker">05</div>
-      <div class="event-spacer"></div>
+      <div class="event-body">
+        <div class="event-title">沖縄合宿＋オフ会</div>
+        <div class="event-location">沖縄</div>
+      </div>
+      <div class="event-countdown"></div>
     </div>
 
-    <!-- Event 6 -->
-    <div class="event-row reveal">
-      <div class="event-spacer"></div>
-      <div class="event-marker">06</div>
-      <div class="event-card">
-        <div class="event-meta">
-          <span class="event-date">10.25</span>
-          <span class="event-day">Sun · 2026</span>
-          <span class="event-tag">SEMINAR + 懇親会</span>
-        </div>
-        <div class="event-name">東京セミナー＋懇親会</div>
-        <div class="event-location">TOKYO</div>
-        <div class="event-desc">
-          年末ラッシュに向けた、最重要戦略セミナー。海外販売の繁忙期を最大化する手法を、ここで全公開。再び東京で、半年ぶりの仲間と再会を。
-        </div>
-        <div class="event-countdown" data-target="2026-10-25">
-          <span class="countdown-num">—</span>
-          <span class="countdown-label">DAYS TO GO</span>
-        </div>
+    <div class="event" data-date="2026-10-25">
+      <div>
+        <div class="event-date">10月25日</div>
+        <div class="event-day">日曜日</div>
       </div>
+      <div class="event-body">
+        <div class="event-title">東京セミナー＋懇親会</div>
+        <div class="event-location">東京</div>
+      </div>
+      <div class="event-countdown"></div>
     </div>
 
-    <!-- Event 7 -->
-    <div class="event-row reveal">
-      <div class="event-card">
-        <div class="event-meta">
-          <span class="event-date">11.20 — 23</span>
-          <span class="event-day">Fri - Mon · 2026</span>
-          <span class="event-tag special">海外ツアー · 4 DAYS</span>
-        </div>
-        <div class="event-name">台湾 海外オフ会</div>
-        <div class="event-location">TAIWAN</div>
-        <div class="event-desc">
-          パスポートを握りしめて、海を越える。MoneyGoose × catawiki 公式企画。現地のマーケット視察、夜市、仲間との濃密な4日間。海外で稼ぐ感覚を、五感で掴む旅。
-        </div>
-        <div class="event-countdown" data-target="2026-11-20">
-          <span class="countdown-num">—</span>
-          <span class="countdown-label">DAYS TO GO</span>
-        </div>
+    <div class="event" data-date="2026-11-20">
+      <div>
+        <div class="event-date">11月20-23日</div>
+        <div class="event-day">金〜月曜日</div>
       </div>
-      <div class="event-marker">07</div>
-      <div class="event-spacer"></div>
+      <div class="event-body">
+        <div class="event-title">台湾 海外オフ会</div>
+        <div class="event-location">台湾</div>
+      </div>
+      <div class="event-countdown"></div>
     </div>
 
-    <!-- Event 8 -->
-    <div class="event-row reveal">
-      <div class="event-spacer"></div>
-      <div class="event-marker">08</div>
-      <div class="event-card">
-        <div class="event-meta">
-          <span class="event-date">12.12</span>
-          <span class="event-day">Sat · 2026</span>
-          <span class="event-tag special">SEMINAR + 忘年会</span>
-        </div>
-        <div class="event-name">大阪セミナー＋忘年会</div>
-        <div class="event-location">OSAKA</div>
-        <div class="event-desc">
-          一年の集大成。関西の街で、今年の自分を振り返り、来年の自分を描く。忘年会では、笑い、泣き、抱き合い、また明日から走り出すための栄養補給を。
-        </div>
-        <div class="event-countdown" data-target="2026-12-12">
-          <span class="countdown-num">—</span>
-          <span class="countdown-label">DAYS TO GO</span>
-        </div>
+    <div class="event" data-date="2026-12-12">
+      <div>
+        <div class="event-date">12月12日</div>
+        <div class="event-day">土曜日</div>
       </div>
+      <div class="event-body">
+        <div class="event-title">大阪セミナー＋忘年会</div>
+        <div class="event-location">大阪</div>
+      </div>
+      <div class="event-countdown"></div>
     </div>
 
-    <!-- Event 9 -->
-    <div class="event-row reveal">
-      <div class="event-card">
-        <div class="event-meta">
-          <span class="event-date">1.24</span>
-          <span class="event-day">Sun · 2027</span>
-          <span class="event-tag special">SEMINAR + 新年会</span>
-        </div>
-        <div class="event-name">名古屋セミナー＋新年会</div>
-        <div class="event-location">NAGOYA</div>
-        <div class="event-desc">
-          新しい年の幕開け。新年会で誓いを立て、セミナーで武装する。次の365日、また仲間と共に駆け抜けるための、最高のスタートダッシュを。
-        </div>
-        <div class="event-countdown" data-target="2027-01-24">
-          <span class="countdown-num">—</span>
-          <span class="countdown-label">DAYS TO GO</span>
-        </div>
+    <div class="event" data-date="2027-01-24">
+      <div>
+        <div class="event-date">1月24日</div>
+        <div class="event-day">日曜日</div>
       </div>
-      <div class="event-marker">09</div>
-      <div class="event-spacer"></div>
+      <div class="event-body">
+        <div class="event-title">名古屋セミナー＋新年会</div>
+        <div class="event-location">名古屋</div>
+      </div>
+      <div class="event-countdown"></div>
     </div>
 
   </div>
-</section>
 
-<!-- ===== WHY JOIN ===== -->
-<section class="why-section">
-  <div class="timeline-header">
-    <div class="section-label reveal">— Why Join —</div>
-    <h2 class="section-title reveal">なぜ、リアルで会うのか。</h2>
-  </div>
-  <div class="why-grid">
-    <div class="why-card reveal">
-      <div class="why-icon">I</div>
-      <div class="why-title">熱量は、画面を超えない。</div>
-      <div class="why-text">
-        オンラインで得られるのは情報だけ。本気の人の「目の輝き」「声の震え」「握手の力」は、リアルでしか伝わらない。一度浴びると、もう戻れない。
-      </div>
-    </div>
-    <div class="why-card reveal">
-      <div class="why-icon">II</div>
-      <div class="why-title">仲間が、人生を変える。</div>
-      <div class="why-text">
-        孤独に頑張るのは、もう終わり。同じ目線で、同じ熱量で、同じ未来を見ている仲間と出会う。その出会い1つで、3年分の遠回りが省ける。
-      </div>
-    </div>
-    <div class="why-card reveal">
-      <div class="why-icon">III</div>
-      <div class="why-title">本音は、酒の席で出る。</div>
-      <div class="why-text">
-        セミナーで話せない裏話、リアルな数字、生々しい失敗談。すべては夜の懇親会で交わされる。教科書に載らない学びが、ここにある。
-      </div>
-    </div>
-    <div class="why-card reveal">
-      <div class="why-icon">IV</div>
-      <div class="why-title">旅は、視野を広げる。</div>
-      <div class="why-text">
-        東京から沖縄、そして海を越えて台湾へ。違う街、違う空気、違う食事。旅で出会う仲間は、なぜか一生モノになる。海外販売を学ぶなら、まず海外を体感しろ。
-      </div>
-    </div>
-  </div>
-</section>
+  <footer>
+    MoneyGoose
+  </footer>
 
-<!-- ===== CTA ===== -->
-<section class="cta">
-  <div class="cta-inner">
-    <div class="section-label reveal">— Join Us —</div>
-    <h2 class="cta-title reveal">
-      画面の前から、<br />一歩、踏み出そう。
-    </h2>
-    <p class="cta-text reveal">
-      気になるイベントが、1つでもあったら。<br />
-      まずは、その日を空けることから始めてください。<br />
-      予定さえ空いていれば、人生は動き出す。
-    </p>
-    <a href="#" class="cta-button reveal">参加申込はこちら</a>
-    <p class="cta-note reveal">※ 各イベントの詳細・参加費は順次ご案内します。</p>
-  </div>
-</section>
-
-<!-- ===== FOOTER ===== -->
-<footer>
-  <div class="footer-logo">MONEY GOOSE</div>
-  <div class="footer-text">© 2026 MoneyGoose. All rights reserved.</div>
-</footer>
+</div>
 
 <script>
-  // Countdown
-  document.querySelectorAll('.event-countdown').forEach(el => {
-    const target = new Date(el.dataset.target);
-    const today = new Date();
-    today.setHours(0,0,0,0);
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  document.querySelectorAll('.event').forEach(el => {
+    const target = new Date(el.dataset.date);
     const diff = Math.ceil((target - today) / (1000 * 60 * 60 * 24));
-    const numEl = el.querySelector('.countdown-num');
-    const labelEl = el.querySelector('.countdown-label');
+    const cdEl = el.querySelector('.event-countdown');
+
     if (diff > 0) {
-      numEl.textContent = diff;
-      labelEl.textContent = 'DAYS TO GO';
+      cdEl.textContent = `あと${diff}日`;
     } else if (diff === 0) {
-      numEl.textContent = '本日';
-      labelEl.textContent = 'TODAY';
+      cdEl.textContent = '本日開催';
+      cdEl.classList.add('today');
     } else {
-      numEl.textContent = '✓';
-      labelEl.textContent = 'COMPLETED';
-      el.style.opacity = '0.5';
+      cdEl.textContent = '終了';
+      cdEl.classList.add('past');
+      el.classList.add('past');
     }
   });
-
-  // Reveal on scroll
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 
 </body>
