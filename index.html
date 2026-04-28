@@ -78,7 +78,7 @@
     display: grid;
     grid-template-columns: 110px 1fr auto;
     gap: 20px;
-    align-items: center;
+    align-items: start;
     transition: border-color 0.2s ease;
   }
 
@@ -116,6 +116,34 @@
   .event-location {
     font-size: 13px;
     color: var(--text-mute);
+  }
+
+  .event-details {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--line);
+    font-size: 13px;
+    color: var(--text-mute);
+    line-height: 1.8;
+  }
+
+  .event-details .venue {
+    color: var(--text);
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  .event-details .address {
+    font-size: 12px;
+  }
+
+  .event-details .schedule {
+    margin-top: 6px;
+  }
+
+  .event-details .schedule span {
+    color: var(--text);
+    font-weight: 500;
   }
 
   .event-countdown {
@@ -185,6 +213,13 @@
       <div class="event-body">
         <div class="event-title">東京セミナー＋懇親会</div>
         <div class="event-location">東京</div>
+        <div class="event-details">
+          <div class="venue">HEARTH【ハース】恵比寿</div>
+          <div class="address">東京都渋谷区恵比寿西1-15-8 Sun Ebisu B1・1F</div>
+          <div class="schedule">
+            <span>15:00〜</span> セミナー　／　<span>18:00〜</span> 懇親会（会費 6,000円予定）
+          </div>
+        </div>
       </div>
       <div class="event-countdown"></div>
     </div>
