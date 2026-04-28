@@ -7,99 +7,112 @@
 <meta name="description" content="MoneyGoose リアルイベントの年間スケジュールです。" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;900&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --bg: #f7f2e8;
-    --card: #ffffff;
-    --text: #2c2823;
-    --text-mute: #857c6f;
-    --accent: #b87a3d;
-    --accent-soft: #f5e6d0;
-    --line: #e6dfd0;
-
-    --type-seminar: #5b7a99;
-    --type-seminar-bg: #e6edf4;
-    --type-offkai: #7a9b6f;
-    --type-offkai-bg: #e8f0e4;
-    --type-camp: #a8703e;
-    --type-camp-bg: #f4e8d8;
-    --type-overseas: #b85c5c;
-    --type-overseas-bg: #f4e2e2;
-    --type-celebrate: #c19536;
-    --type-celebrate-bg: #f7ecd1;
+    --bg-deep: #0a0a0c;
+    --bg-card: #14141a;
+    --bg-elevated: #1c1c25;
+    --gold: #d4a857;
+    --gold-bright: #f5d186;
+    --gold-deep: #8a6c2e;
+    --ivory: #f4ede0;
+    --text: #e8e2d4;
+    --text-mute: #9a948a;
+    --line: rgba(212, 168, 87, 0.18);
   }
 
+  html { scroll-behavior: smooth; }
+
   body {
-    font-family: "Zen Kaku Gothic New", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
-    background: var(--bg);
+    font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-deep);
     color: var(--text);
-    line-height: 1.7;
+    line-height: 1.8;
+    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
   }
 
-  .container {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 56px 24px 80px;
-  }
-
-  /* ===== HEADER ===== */
-  header {
-    background: linear-gradient(135deg, #fff8eb 0%, #f5e6d0 100%);
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    padding: 40px 32px;
-    margin-bottom: 32px;
-    text-align: center;
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 75vh;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     overflow: hidden;
+    padding: 80px 24px 60px;
+    background:
+      radial-gradient(ellipse at 20% 10%, rgba(212, 168, 87, 0.18), transparent 50%),
+      radial-gradient(ellipse at 80% 90%, rgba(212, 168, 87, 0.12), transparent 50%),
+      linear-gradient(180deg, #0a0a0c 0%, #14141a 100%);
   }
 
-  header::before {
+  .hero::before {
     content: "";
     position: absolute;
-    top: -40px; right: -40px;
-    width: 140px; height: 140px;
-    background: radial-gradient(circle, rgba(184, 122, 61, 0.12), transparent 70%);
-    border-radius: 50%;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(212, 168, 87, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(212, 168, 87, 0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+    pointer-events: none;
   }
 
-  .badge-top {
+  .hero-inner {
+    position: relative;
+    max-width: 1100px;
+    z-index: 2;
+    animation: fadeUp 1.2s ease-out;
+  }
+
+  .hero-badge {
     display: inline-block;
-    background: var(--accent);
-    color: white;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    padding: 4px 14px;
+    padding: 8px 24px;
+    border: 1px solid var(--gold);
+    color: var(--gold-bright);
+    font-size: 12px;
+    letter-spacing: 0.4em;
+    margin-bottom: 32px;
     border-radius: 999px;
-    margin-bottom: 16px;
+    text-transform: uppercase;
   }
 
-  h1 {
-    font-size: 26px;
+  .hero-title {
+    font-family: "Noto Serif JP", serif;
     font-weight: 900;
-    margin-bottom: 10px;
-    letter-spacing: 0.02em;
-    line-height: 1.5;
+    font-size: clamp(28px, 5vw, 52px);
+    line-height: 1.4;
+    letter-spacing: 0.04em;
+    margin-bottom: 24px;
+    color: var(--ivory);
   }
 
-  .subtitle {
-    font-size: 14px;
-    color: var(--text-mute);
-    margin-bottom: 28px;
+  .hero-title .accent {
+    background: linear-gradient(135deg, var(--gold-bright), var(--gold), var(--gold-deep));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
-  .stats {
+  .hero-sub {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(16px, 2vw, 22px);
+    color: var(--gold-bright);
+    margin-bottom: 40px;
+    letter-spacing: 0.15em;
+  }
+
+  .hero-stats {
     display: flex;
-    justify-content: center;
-    gap: 32px;
-    border-top: 1px solid rgba(184, 122, 61, 0.2);
-    padding-top: 20px;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 48px;
+    margin-top: 32px;
   }
 
   .stat {
@@ -107,474 +120,614 @@
   }
 
   .stat-num {
-    font-size: 24px;
-    font-weight: 900;
-    color: var(--accent);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(40px, 5vw, 60px);
+    font-weight: 600;
+    color: var(--gold-bright);
     line-height: 1;
+    display: block;
   }
 
   .stat-label {
     font-size: 11px;
+    letter-spacing: 0.3em;
     color: var(--text-mute);
-    margin-top: 4px;
-    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: 8px;
   }
 
-  /* ===== INTRO ===== */
-  .intro {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 18px 22px;
-    margin-bottom: 24px;
-    font-size: 14px;
-    color: var(--text);
-    line-height: 1.9;
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
-  }
-
-  .intro-icon {
-    flex-shrink: 0;
-    width: 28px; height: 28px;
-    background: var(--accent-soft);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--accent);
-    font-weight: 700;
-    font-size: 14px;
-  }
-
-  .intro-text {
-    flex: 1;
-  }
-
-  /* ===== EVENTS ===== */
-  .events {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .event {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 22px 24px;
-    display: grid;
-    grid-template-columns: 100px 1fr auto;
-    gap: 22px;
-    align-items: start;
-    transition: all 0.25s ease;
+  /* ===== TIMELINE ===== */
+  .timeline-section {
+    padding: 100px 24px 120px;
+    background: var(--bg-deep);
     position: relative;
   }
 
-  .event:hover {
-    border-color: var(--accent);
-    box-shadow: 0 4px 16px rgba(184, 122, 61, 0.08);
-    transform: translateY(-1px);
+  .timeline-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
   }
 
-  .event.past {
-    opacity: 0.45;
+  .timeline-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 80px;
   }
 
-  .event-date-col {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .event-month {
-    font-size: 11px;
-    color: var(--text-mute);
-    letter-spacing: 0.1em;
-    font-weight: 500;
-  }
-
-  .event-day-num {
-    font-size: 28px;
-    font-weight: 900;
-    line-height: 1.1;
-    color: var(--text);
-    margin-top: 2px;
-  }
-
-  .event-day-num small {
+  .section-label {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--gold);
     font-size: 18px;
-    font-weight: 700;
+    letter-spacing: 0.2em;
+    margin-bottom: 16px;
   }
 
-  .event-weekday {
-    font-size: 12px;
+  .section-title {
+    font-family: "Noto Serif JP", serif;
+    font-weight: 900;
+    font-size: clamp(24px, 3.5vw, 36px);
+    margin-bottom: 16px;
+    color: var(--ivory);
+    line-height: 1.5;
+  }
+
+  .section-note {
     color: var(--text-mute);
-    margin-top: 2px;
+    font-size: 14px;
+    line-height: 2;
   }
 
-  .event-body {
-    min-width: 0;
+  .timeline {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg, transparent, var(--gold-deep) 5%, var(--gold-deep) 95%, transparent);
+    transform: translateX(-50%);
+  }
+
+  .event-row {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 64px;
+    position: relative;
+  }
+
+  .event-row:nth-child(even) .event-card {
+    grid-column: 3;
+  }
+
+  .event-row:nth-child(even) .event-spacer {
+    grid-column: 1;
+  }
+
+  .event-row:nth-child(odd) .event-card {
+    grid-column: 1;
+  }
+
+  .event-row:nth-child(odd) .event-spacer {
+    grid-column: 3;
+  }
+
+  .event-marker {
+    grid-column: 2;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--bg-deep);
+    border: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Cormorant Garamond", serif;
+    color: var(--gold-bright);
+    font-weight: 600;
+    font-size: 20px;
+    z-index: 2;
+    position: relative;
+    box-shadow: 0 0 30px rgba(212, 168, 87, 0.3);
+  }
+
+  .event-card {
+    background: linear-gradient(160deg, var(--bg-card), var(--bg-elevated));
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 32px 28px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .event-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold-deep), var(--gold), var(--gold-deep));
+    opacity: 0.6;
+  }
+
+  .event-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--gold);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(212, 168, 87, 0.1);
+  }
+
+  .event-meta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+
+  .event-date {
+    font-family: "Cormorant Garamond", serif;
+    color: var(--gold-bright);
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .event-day {
+    color: var(--text-mute);
+    font-size: 13px;
   }
 
   .event-tag {
     display: inline-block;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 3px 10px;
+    padding: 4px 12px;
+    background: rgba(212, 168, 87, 0.12);
+    color: var(--gold-bright);
     border-radius: 4px;
-    letter-spacing: 0.05em;
-    margin-bottom: 8px;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    border: 1px solid rgba(212, 168, 87, 0.3);
   }
 
-  .tag-seminar { background: var(--type-seminar-bg); color: var(--type-seminar); }
-  .tag-offkai { background: var(--type-offkai-bg); color: var(--type-offkai); }
-  .tag-camp { background: var(--type-camp-bg); color: var(--type-camp); }
-  .tag-overseas { background: var(--type-overseas-bg); color: var(--type-overseas); }
-  .tag-celebrate { background: var(--type-celebrate-bg); color: var(--type-celebrate); }
+  .event-tag.special {
+    background: linear-gradient(135deg, rgba(212, 168, 87, 0.3), rgba(212, 168, 87, 0.1));
+    color: var(--ivory);
+    border-color: var(--gold);
+  }
 
-  .event-title {
-    font-size: 17px;
+  .event-name {
+    font-family: "Noto Serif JP", serif;
+    font-size: 20px;
     font-weight: 700;
-    margin-bottom: 4px;
-    line-height: 1.4;
+    margin-bottom: 6px;
+    color: var(--ivory);
+    line-height: 1.5;
   }
 
   .event-location {
+    color: var(--gold);
     font-size: 13px;
-    color: var(--text-mute);
-    display: flex;
-    align-items: center;
-    gap: 4px;
+    letter-spacing: 0.1em;
+    margin-bottom: 0;
   }
 
   .event-location::before {
-    content: "📍";
-    font-size: 12px;
+    content: "◆ ";
+    color: var(--gold-deep);
   }
 
   .event-details {
-    margin-top: 14px;
-    padding: 12px 14px;
-    background: #faf6ee;
-    border-radius: 8px;
+    margin-top: 18px;
+    padding: 16px 18px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    border-left: 2px solid var(--gold);
     font-size: 13px;
-    color: var(--text);
     line-height: 1.9;
   }
 
   .event-details .venue {
+    color: var(--ivory);
     font-weight: 700;
     margin-bottom: 2px;
   }
 
   .event-details .address {
-    font-size: 12px;
     color: var(--text-mute);
-    margin-bottom: 8px;
-  }
-
-  .event-details .schedule {
-    border-top: 1px dashed var(--line);
-    padding-top: 8px;
+    font-size: 12px;
+    margin-bottom: 10px;
   }
 
   .event-details .schedule-row {
     display: flex;
     align-items: baseline;
-    gap: 10px;
-    font-size: 13px;
+    gap: 12px;
+    color: var(--text);
   }
 
   .event-details .schedule-time {
+    color: var(--gold-bright);
     font-weight: 700;
-    color: var(--accent);
-    min-width: 60px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 16px;
+    min-width: 64px;
   }
 
   .event-details .schedule-fee {
-    font-size: 12px;
     color: var(--text-mute);
-    margin-left: 6px;
+    font-size: 12px;
+    margin-left: 4px;
   }
 
   .event-countdown {
-    text-align: right;
-    font-size: 12px;
-    color: var(--accent);
-    white-space: nowrap;
-    font-weight: 700;
-    background: var(--accent-soft);
-    padding: 6px 12px;
-    border-radius: 999px;
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
   }
 
-  .event-countdown.today {
-    background: #fde2e2;
-    color: #c44;
+  .countdown-num {
+    font-family: "Cormorant Garamond", serif;
+    color: var(--gold-bright);
+    font-size: 26px;
+    font-weight: 600;
   }
 
-  .event-countdown.past {
-    background: #eee;
+  .countdown-label {
+    font-size: 11px;
     color: var(--text-mute);
-    font-weight: 500;
+    letter-spacing: 0.2em;
+  }
+
+  .event-card.past {
+    opacity: 0.4;
   }
 
   /* ===== FOOTER ===== */
   footer {
+    padding: 48px 24px 40px;
     text-align: center;
-    margin-top: 48px;
-    padding-top: 24px;
     border-top: 1px solid var(--line);
-    font-size: 12px;
-    color: var(--text-mute);
+    background: var(--bg-deep);
   }
 
   .footer-logo {
-    font-weight: 900;
-    color: var(--accent);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    color: var(--gold-bright);
+    margin-bottom: 12px;
+  }
+
+  .footer-text {
+    font-size: 12px;
+    color: var(--text-mute);
     letter-spacing: 0.1em;
-    margin-bottom: 4px;
+  }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   /* ===== RESPONSIVE ===== */
-  @media (max-width: 600px) {
-    .container { padding: 32px 14px 60px; }
-    header { padding: 32px 22px; }
-    h1 { font-size: 21px; }
-    .stats { gap: 20px; }
-    .stat-num { font-size: 20px; }
-
-    .event {
-      grid-template-columns: 80px 1fr;
-      grid-template-rows: auto auto;
-      gap: 8px 16px;
-      padding: 18px 18px;
+  @media (max-width: 768px) {
+    .timeline::before {
+      left: 28px;
     }
-    .event-countdown {
+    .event-row {
+      grid-template-columns: 56px 1fr;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .event-marker {
+      grid-column: 1;
+    }
+    .event-row:nth-child(even) .event-card,
+    .event-row:nth-child(odd) .event-card {
       grid-column: 2;
-      justify-self: start;
-      margin-top: -4px;
-      font-size: 11px;
-      padding: 4px 10px;
     }
-    .event-day-num { font-size: 24px; }
-    .event-title { font-size: 15px; }
+    .event-spacer {
+      display: none;
+    }
+    .event-card {
+      padding: 24px 22px;
+    }
+    .hero-stats {
+      gap: 32px;
+    }
   }
 </style>
 </head>
 <body>
 
-<div class="container">
-
-  <header>
-    <div class="badge-top">2026 — 2027</div>
-    <h1>MoneyGoose<br />リアルイベント スケジュール</h1>
-    <div class="subtitle">2026年5月 〜 2027年1月｜全国 + 海外</div>
-    <div class="stats">
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">MoneyGoose Real Events 2026 — 2027</div>
+    <h1 class="hero-title">
+      リアルイベント<br />
+      <span class="accent">スケジュール</span>
+    </h1>
+    <p class="hero-sub">2026.05 — 2027.01</p>
+    <div class="hero-stats">
       <div class="stat">
-        <div class="stat-num">9</div>
-        <div class="stat-label">EVENTS</div>
+        <span class="stat-num">9</span>
+        <span class="stat-label">Events</span>
       </div>
       <div class="stat">
-        <div class="stat-num">6</div>
-        <div class="stat-label">CITIES + 台湾</div>
+        <span class="stat-num">6</span>
+        <span class="stat-label">Cities + 台湾</span>
       </div>
       <div class="stat">
-        <div class="stat-num">9ヶ月</div>
-        <div class="stat-label">PERIOD</div>
+        <span class="stat-num">9</span>
+        <span class="stat-label">Months</span>
       </div>
-    </div>
-  </header>
-
-  <div class="intro">
-    <div class="intro-icon">i</div>
-    <div class="intro-text">
-      1年間のリアルイベント予定です。会場・参加費・申込方法など詳細は、各イベントごとに順次ご案内します。
     </div>
   </div>
+</section>
 
-  <div class="events">
+<!-- ===== TIMELINE ===== -->
+<section class="timeline-section">
+  <div class="timeline-header">
+    <div class="section-label reveal">— Schedule —</div>
+    <h2 class="section-title reveal">年間イベント一覧</h2>
+    <p class="section-note reveal">
+      会場・参加費・申込方法など詳細は、各イベントごとに順次ご案内します。
+    </p>
+  </div>
+
+  <div class="timeline">
 
     <!-- 1: 5/17 東京 -->
-    <div class="event" data-date="2026-05-17">
-      <div class="event-date-col">
-        <div class="event-month">MAY 2026</div>
-        <div class="event-day-num">17</div>
-        <div class="event-weekday">日曜日</div>
-      </div>
-      <div class="event-body">
-        <span class="event-tag tag-seminar">セミナー＋懇親会</span>
-        <div class="event-title">東京セミナー＋懇親会</div>
-        <div class="event-location">東京・恵比寿</div>
+    <div class="event-row reveal">
+      <div class="event-card" data-date="2026-05-17">
+        <div class="event-meta">
+          <span class="event-date">5.17</span>
+          <span class="event-day">Sun · 2026</span>
+          <span class="event-tag">セミナー＋懇親会</span>
+        </div>
+        <div class="event-name">東京セミナー＋懇親会</div>
+        <div class="event-location">TOKYO · 恵比寿</div>
         <div class="event-details">
           <div class="venue">HEARTH【ハース】恵比寿</div>
           <div class="address">東京都渋谷区恵比寿西1-15-8 Sun Ebisu B1・1F</div>
-          <div class="schedule">
-            <div class="schedule-row">
-              <span class="schedule-time">15:00〜</span>
-              <span>セミナー</span>
-            </div>
-            <div class="schedule-row">
-              <span class="schedule-time">18:00〜</span>
-              <span>懇親会<span class="schedule-fee">（会費 6,000円予定）</span></span>
-            </div>
+          <div class="schedule-row">
+            <span class="schedule-time">15:00〜</span>
+            <span>セミナー</span>
+          </div>
+          <div class="schedule-row">
+            <span class="schedule-time">18:00〜</span>
+            <span>懇親会<span class="schedule-fee">（会費 6,000円予定）</span></span>
           </div>
         </div>
+        <div class="event-countdown">
+          <span class="countdown-num">—</span>
+          <span class="countdown-label">DAYS TO GO</span>
+        </div>
       </div>
-      <div class="event-countdown"></div>
+      <div class="event-marker">01</div>
+      <div class="event-spacer"></div>
     </div>
 
     <!-- 2: 6/27 群馬 -->
-    <div class="event" data-date="2026-06-27">
-      <div class="event-date-col">
-        <div class="event-month">JUN 2026</div>
-        <div class="event-day-num">27</div>
-        <div class="event-weekday">土曜日</div>
+    <div class="event-row reveal">
+      <div class="event-spacer"></div>
+      <div class="event-marker">02</div>
+      <div class="event-card" data-date="2026-06-27">
+        <div class="event-meta">
+          <span class="event-date">6.27</span>
+          <span class="event-day">Sat · 2026</span>
+          <span class="event-tag">オフ会</span>
+        </div>
+        <div class="event-name">群馬オフ会</div>
+        <div class="event-location">GUNMA</div>
+        <div class="event-countdown">
+          <span class="countdown-num">—</span>
+          <span class="countdown-label">DAYS TO GO</span>
+        </div>
       </div>
-      <div class="event-body">
-        <span class="event-tag tag-offkai">オフ会</span>
-        <div class="event-title">群馬オフ会</div>
-        <div class="event-location">群馬</div>
-      </div>
-      <div class="event-countdown"></div>
     </div>
 
     <!-- 3: 7/26 名古屋 -->
-    <div class="event" data-date="2026-07-26">
-      <div class="event-date-col">
-        <div class="event-month">JUL 2026</div>
-        <div class="event-day-num">26</div>
-        <div class="event-weekday">日曜日</div>
+    <div class="event-row reveal">
+      <div class="event-card" data-date="2026-07-26">
+        <div class="event-meta">
+          <span class="event-date">7.26</span>
+          <span class="event-day">Sun · 2026</span>
+          <span class="event-tag">セミナー＋懇親会</span>
+        </div>
+        <div class="event-name">名古屋セミナー＋懇親会</div>
+        <div class="event-location">NAGOYA</div>
+        <div class="event-countdown">
+          <span class="countdown-num">—</span>
+          <span class="countdown-label">DAYS TO GO</span>
+        </div>
       </div>
-      <div class="event-body">
-        <span class="event-tag tag-seminar">セミナー＋懇親会</span>
-        <div class="event-title">名古屋セミナー＋懇親会</div>
-        <div class="event-location">名古屋</div>
-      </div>
-      <div class="event-countdown"></div>
+      <div class="event-marker">03</div>
+      <div class="event-spacer"></div>
     </div>
 
     <!-- 4: 8/22 福岡 -->
-    <div class="event" data-date="2026-08-22">
-      <div class="event-date-col">
-        <div class="event-month">AUG 2026</div>
-        <div class="event-day-num">22</div>
-        <div class="event-weekday">土曜日</div>
+    <div class="event-row reveal">
+      <div class="event-spacer"></div>
+      <div class="event-marker">04</div>
+      <div class="event-card" data-date="2026-08-22">
+        <div class="event-meta">
+          <span class="event-date">8.22</span>
+          <span class="event-day">Sat · 2026</span>
+          <span class="event-tag special">合宿</span>
+        </div>
+        <div class="event-name">福岡合宿</div>
+        <div class="event-location">FUKUOKA</div>
+        <div class="event-countdown">
+          <span class="countdown-num">—</span>
+          <span class="countdown-label">DAYS TO GO</span>
+        </div>
       </div>
-      <div class="event-body">
-        <span class="event-tag tag-camp">合宿</span>
-        <div class="event-title">福岡合宿</div>
-        <div class="event-location">福岡</div>
-      </div>
-      <div class="event-countdown"></div>
     </div>
 
     <!-- 5: 9/26-27 沖縄 -->
-    <div class="event" data-date="2026-09-26">
-      <div class="event-date-col">
-        <div class="event-month">SEP 2026</div>
-        <div class="event-day-num">26<small>-27</small></div>
-        <div class="event-weekday">土・日</div>
+    <div class="event-row reveal">
+      <div class="event-card" data-date="2026-09-26">
+        <div class="event-meta">
+          <span class="event-date">9.26 — 27</span>
+          <span class="event-day">Sat - Sun · 2026</span>
+          <span class="event-tag special">合宿＋オフ会 · 2 DAYS</span>
+        </div>
+        <div class="event-name">沖縄合宿＋オフ会</div>
+        <div class="event-location">OKINAWA</div>
+        <div class="event-countdown">
+          <span class="countdown-num">—</span>
+          <span class="countdown-label">DAYS TO GO</span>
+        </div>
       </div>
-      <div class="event-body">
-        <span class="event-tag tag-camp">合宿＋オフ会</span>
-        <div class="event-title">沖縄合宿＋オフ会</div>
-        <div class="event-location">沖縄</div>
-      </div>
-      <div class="event-countdown"></div>
+      <div class="event-marker">05</div>
+      <div class="event-spacer"></div>
     </div>
 
     <!-- 6: 10/25 東京 -->
-    <div class="event" data-date="2026-10-25">
-      <div class="event-date-col">
-        <div class="event-month">OCT 2026</div>
-        <div class="event-day-num">25</div>
-        <div class="event-weekday">日曜日</div>
+    <div class="event-row reveal">
+      <div class="event-spacer"></div>
+      <div class="event-marker">06</div>
+      <div class="event-card" data-date="2026-10-25">
+        <div class="event-meta">
+          <span class="event-date">10.25</span>
+          <span class="event-day">Sun · 2026</span>
+          <span class="event-tag">セミナー＋懇親会</span>
+        </div>
+        <div class="event-name">東京セミナー＋懇親会</div>
+        <div class="event-location">TOKYO</div>
+        <div class="event-countdown">
+          <span class="countdown-num">—</span>
+          <span class="countdown-label">DAYS TO GO</span>
+        </div>
       </div>
-      <div class="event-body">
-        <span class="event-tag tag-seminar">セミナー＋懇親会</span>
-        <div class="event-title">東京セミナー＋懇親会</div>
-        <div class="event-location">東京</div>
-      </div>
-      <div class="event-countdown"></div>
     </div>
 
     <!-- 7: 11/20-23 台湾 -->
-    <div class="event" data-date="2026-11-20">
-      <div class="event-date-col">
-        <div class="event-month">NOV 2026</div>
-        <div class="event-day-num">20<small>-23</small></div>
-        <div class="event-weekday">金〜月</div>
+    <div class="event-row reveal">
+      <div class="event-card" data-date="2026-11-20">
+        <div class="event-meta">
+          <span class="event-date">11.20 — 23</span>
+          <span class="event-day">Fri - Mon · 2026</span>
+          <span class="event-tag special">海外オフ会 · 4 DAYS</span>
+        </div>
+        <div class="event-name">台湾 海外オフ会</div>
+        <div class="event-location">TAIWAN</div>
+        <div class="event-countdown">
+          <span class="countdown-num">—</span>
+          <span class="countdown-label">DAYS TO GO</span>
+        </div>
       </div>
-      <div class="event-body">
-        <span class="event-tag tag-overseas">海外オフ会</span>
-        <div class="event-title">台湾 海外オフ会</div>
-        <div class="event-location">台湾</div>
-      </div>
-      <div class="event-countdown"></div>
+      <div class="event-marker">07</div>
+      <div class="event-spacer"></div>
     </div>
 
     <!-- 8: 12/12 大阪 -->
-    <div class="event" data-date="2026-12-12">
-      <div class="event-date-col">
-        <div class="event-month">DEC 2026</div>
-        <div class="event-day-num">12</div>
-        <div class="event-weekday">土曜日</div>
+    <div class="event-row reveal">
+      <div class="event-spacer"></div>
+      <div class="event-marker">08</div>
+      <div class="event-card" data-date="2026-12-12">
+        <div class="event-meta">
+          <span class="event-date">12.12</span>
+          <span class="event-day">Sat · 2026</span>
+          <span class="event-tag special">セミナー＋忘年会</span>
+        </div>
+        <div class="event-name">大阪セミナー＋忘年会</div>
+        <div class="event-location">OSAKA</div>
+        <div class="event-countdown">
+          <span class="countdown-num">—</span>
+          <span class="countdown-label">DAYS TO GO</span>
+        </div>
       </div>
-      <div class="event-body">
-        <span class="event-tag tag-celebrate">セミナー＋忘年会</span>
-        <div class="event-title">大阪セミナー＋忘年会</div>
-        <div class="event-location">大阪</div>
-      </div>
-      <div class="event-countdown"></div>
     </div>
 
     <!-- 9: 1/24 名古屋 -->
-    <div class="event" data-date="2027-01-24">
-      <div class="event-date-col">
-        <div class="event-month">JAN 2027</div>
-        <div class="event-day-num">24</div>
-        <div class="event-weekday">日曜日</div>
+    <div class="event-row reveal">
+      <div class="event-card" data-date="2027-01-24">
+        <div class="event-meta">
+          <span class="event-date">1.24</span>
+          <span class="event-day">Sun · 2027</span>
+          <span class="event-tag special">セミナー＋新年会</span>
+        </div>
+        <div class="event-name">名古屋セミナー＋新年会</div>
+        <div class="event-location">NAGOYA</div>
+        <div class="event-countdown">
+          <span class="countdown-num">—</span>
+          <span class="countdown-label">DAYS TO GO</span>
+        </div>
       </div>
-      <div class="event-body">
-        <span class="event-tag tag-celebrate">セミナー＋新年会</span>
-        <div class="event-title">名古屋セミナー＋新年会</div>
-        <div class="event-location">名古屋</div>
-      </div>
-      <div class="event-countdown"></div>
+      <div class="event-marker">09</div>
+      <div class="event-spacer"></div>
     </div>
 
   </div>
+</section>
 
-  <footer>
-    <div class="footer-logo">MoneyGoose</div>
-    <div>リアルイベント 2026 - 2027</div>
-  </footer>
-
-</div>
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-logo">MONEY GOOSE</div>
+  <div class="footer-text">Real Events 2026 — 2027</div>
+</footer>
 
 <script>
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
-  document.querySelectorAll('.event').forEach(el => {
-    const target = new Date(el.dataset.date);
+  document.querySelectorAll('.event-card').forEach(card => {
+    const target = new Date(card.dataset.date);
     const diff = Math.ceil((target - today) / (1000 * 60 * 60 * 24));
-    const cdEl = el.querySelector('.event-countdown');
-
+    const numEl = card.querySelector('.countdown-num');
+    const labelEl = card.querySelector('.countdown-label');
     if (diff > 0) {
-      cdEl.textContent = `あと${diff}日`;
+      numEl.textContent = diff;
+      labelEl.textContent = 'DAYS TO GO';
     } else if (diff === 0) {
-      cdEl.textContent = '本日開催';
-      cdEl.classList.add('today');
+      numEl.textContent = '本日';
+      labelEl.textContent = 'TODAY';
     } else {
-      cdEl.textContent = '終了';
-      cdEl.classList.add('past');
-      el.classList.add('past');
+      numEl.textContent = '✓';
+      labelEl.textContent = 'COMPLETED';
+      card.classList.add('past');
     }
   });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 
 </body>
